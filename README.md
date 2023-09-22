@@ -11,6 +11,7 @@ Import
     solaar = {
       #url = "https://github.com/Svenum/Solaar-Flake/release-1.1.9; # For latest stable version
       #url = "https://github.com/Svenum/Solaar-Flake/release-1.1.10rc; # For latest beta version
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   outputs = {nixpkgs, solaar}: {
