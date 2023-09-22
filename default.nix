@@ -96,4 +96,13 @@ python3Packages.buildPythonApplication rec{
 
   pythonImportsCheck = [ "solaar" ];
 
+  meta = with lib; {
+    mainProgram = "solaar";
+    homepage = "https://github.com/pwr-Solaar/Solaar";
+    description = "Linux device manager for Logitech devices";
+    platforms = with platforms; linux;
+    changelog = "https://github.com/pwr-Solaar/Solaar/releases/tag/${release}";
+    license = licenses.gpl2Only;
+    maintainers = with maintainers; [ "Svenum" ];
+  };
 }
