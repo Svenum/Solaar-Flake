@@ -16,6 +16,7 @@
 }:
 
 let
+  release = "1.1.9";
   dbus-python = ps: with ps; [
     (
       buildPythonPackage rec {
@@ -45,11 +46,11 @@ let
 in
 python3Packages.buildPythonApplication rec{
   pname = "solaar";
-  version = "1.1.9";
+  version = release;
 
   src = fetchurl {
-    url = "https://github.com/pwr-Solaar/Solaar/archive/refs/tags/1.1.9.tar.gz"; 
-    hash = "sha256-PLDLTHnvLqCsfJrcnEpvTxXSjpn/LfM4UN4FIM7Z8RY=";
+    url = "https://github.com/pwr-Solaar/Solaar/archive/refs/tags/${release}.tar.gz"; 
+    hash = "sha256-PLDLTHnvLqCsfJrcnEpvTxXSjpn/LfM4UN4FIM7Z8RY";
   };
 
   outputs = [ "out" "udev" ];
@@ -100,7 +101,7 @@ python3Packages.buildPythonApplication rec{
     homepage = "https://github.com/pwr-Solaar/Solaar";
     description = "Linux device manager for Logitech devices";
     platforms = with platforms; linux;
-    changelog = "https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.9";
+    changelog = "https://github.com/pwr-Solaar/Solaar/releases/tag/${release}";
     license = licenses.gpl2Only;
     maintainers = with maintainers; [ "Svenum" ];
   };
