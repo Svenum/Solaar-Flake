@@ -16,7 +16,7 @@
 }:
 
 let
-  release = "1.1.10rc3";
+  release = "1.1.10";
   dbus-python = ps: with ps; [
     (
       buildPythonPackage rec {
@@ -50,7 +50,7 @@ python3Packages.buildPythonApplication rec{
 
   src = fetchurl {
     url = "https://github.com/pwr-Solaar/Solaar/archive/refs/tags/${release}.tar.gz"; 
-    hash = "sha256-TPAx6u64zoWPvHq9fVVQ5XiWgZSnpNO3l0iipo8aBVI=";
+    hash = "sha256-QIh7UI5M/HU+XC6CyqSvfwV8ra1KMvI4+a74mLjM+yw=";
   };
 
   outputs = [ "out" "udev" ];
