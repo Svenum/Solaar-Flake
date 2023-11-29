@@ -10,14 +10,15 @@
     };
   };
 
-  outputs = { self, nixpkgs }: {
+  outputs = { self, nixpkgs, flake-compat }: {
 
     packages.x86_64-linux.default = (
       import nixpkgs {
         currentSystem = "x86_64-linux";
         localSystem = "x86_64-linux";
       }).pkgs.callPackage ./package.nix {};
-    };
 
     nixosModules.default = import ./module.nix;
+  };
+
 }

@@ -18,7 +18,7 @@ in
       defaultText = "pkgs.solaar-flake";
       description = ''
         Package witch is used for Solaar
-      ''
+      '';
     };
   };
 
