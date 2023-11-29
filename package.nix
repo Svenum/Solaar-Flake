@@ -45,7 +45,7 @@ let
   ];
 in
 python3Packages.buildPythonApplication rec{
-  pname = "solaar";
+  pname = "solaar-flake";
   version = release;
 
   src = fetchurl {

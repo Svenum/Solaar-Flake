@@ -9,7 +9,9 @@ Import
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
     solaar = {
-      url = "https://github.com/Svenum/Solaar-Flake/release-1.1.10; # For latest stable version
+      url = "https://github.com/Svenum/Solaar-Flake/latest; # For latest stable version
+      #url = "https://github.com/Svenum/Solaar-Flake/release-1.1.10; # uncomment line for version 1.1.10
+      #url = "https://github.com/Svenum/Solaar-Flake/main; # Uncomment line for latest unstable version
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -17,11 +19,17 @@ Import
     nixosConfigurations.foo = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ({pkgs, ...}: {
-          environment.systemPackages = [solaar.packages.${pkgs.system}.solaar];
-        })
+          solaar.nixosModules.default
+          configuration.nix
       ];
     };
   }
 }
 ```
+Then enable it by putting:
+```nix
+...
+    programs.solaar.enable = true;
+...
+```
+in configuration.nix

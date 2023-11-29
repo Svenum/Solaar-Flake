@@ -3,6 +3,11 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+
+    flake-compat = {
+      url = "github:edolstra/flake-compat";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs }: {
@@ -11,6 +16,8 @@
       import nixpkgs {
         currentSystem = "x86_64-linux";
         localSystem = "x86_64-linux";
-      }).pkgs.callPackage ./default.nix {};
-  };
+      }).pkgs.callPackage ./package.nix {};
+    };
+
+    nixosModules.default = import ./module.nix;
 }
