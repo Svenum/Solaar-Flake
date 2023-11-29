@@ -13,7 +13,7 @@ in
     '';
 
     package = mkOption {
-      type = types.Package;
+      type = types.package;
       default = solaar-flake;
       defaultText = "pkgs.solaar-flake";
       description = ''
