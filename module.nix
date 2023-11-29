@@ -4,7 +4,7 @@ with lib;
 
 let
   cfg = config.programs.solaar;
-  solaar-flake = pkgs.callPackage ./package.nix;
+  solaar-flake = pkgs.callPackage ./package.nix {};
 in
 {
   options.programs.solaar = {
