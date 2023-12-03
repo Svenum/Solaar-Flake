@@ -7,7 +7,7 @@ Import
 ```nix
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     solaar = {
       url = "https://github.com/Svenum/Solaar-Flake/latest; # For latest stable version
       #url = "https://github.com/Svenum/Solaar-Flake/release-1.1.10; # uncomment line for version 1.1.10
