@@ -10,7 +10,7 @@ Import
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     solaar = {
       url = "https://github.com/Svenum/Solaar-Flake/latest; # For latest stable version
-      #url = "https://github.com/Svenum/Solaar-Flake/release-1.1.10; # uncomment line for version 1.1.11rc1
+      #url = "https://github.com/Svenum/Solaar-Flake/release-1.1.11rc1; # uncomment line for version 1.1.11rc1
       #url = "https://github.com/Svenum/Solaar-Flake/main; # Uncomment line for latest unstable version
       inputs.nixpkgs.follows = "nixpkgs";
     };
