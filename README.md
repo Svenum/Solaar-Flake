@@ -9,9 +9,9 @@ Import
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     solaar = {
-      url = "https://github.com/Svenum/Solaar-Flake/latest; # For latest stable version
-      #url = "https://github.com/Svenum/Solaar-Flake/release-1.1.11; # uncomment line for version 1.1.11
-      #url = "https://github.com/Svenum/Solaar-Flake/main; # Uncomment line for latest unstable version
+      url = "github:Svenum/Solaar-Flake/latest; # For latest stable version
+      #url = "github:Svenum/Solaar-Flake/release-1.1.11; # uncomment line for version 1.1.11
+      #url = "github:Svenum/Solaar-Flake/main; # Uncomment line for latest unstable version
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
