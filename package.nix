@@ -1,6 +1,7 @@
 { stdenv
 , lib
 , fetchurl
+, fetchPypi
 , python3Packages
 , python3
 , dbus
@@ -17,32 +18,13 @@
 
 let
   release = "1.1.13";
-  dbus-python = ps: with ps; [
-    (
-      buildPythonPackage rec {
-        pname = "dbus-python";
-        version = "1.3.2";
-
-        format = "other";
-        outputs = [ "out" "dev" ];
-
-        src = fetchPypi {
-          inherit pname version;
-          sha256 = "sha256-rWeBkwhhi1BpU3viN/jmjKHH/Mle5KEh/mhFsUGCSPg=";
-        };
-        doCheck = false;
-        nativeBuildInputs = [ pkg-config ];
-        buildInputs = [ dbus dbus-glib ];
-        propagatedBuildInputs = [];
-
-        nativeCheckInputs = [ dbus.out pygobject3 ];
-
-        postInstall = ''
-          cp -r dbus_python.egg-info $out/${python.sitePackages}/
-        '';
-      }
-    )
-  ];
+  dbus-python = python3Packages.dbus-python.overrideAttrs (oldAttrs: {
+    src = fetchPypi {
+      pname = "dbus-python";
+      version = "1.3.2";
+      sha256 = "sha256-rWeBkwhhi1BpU3viN/jmjKHH/Mle5KEh/mhFsUGCSPg=";
+    };
+  });
 in
 python3Packages.buildPythonApplication rec{
   pname = "solaar-flake";
@@ -74,7 +56,7 @@ python3Packages.buildPythonApplication rec{
     pyudev
     pyyaml
     xlib
-    (python3.withPackages dbus-python)
+    dbus-python
   ];
 
   # the -cli symlink is just to maintain compabilility with older versions where
