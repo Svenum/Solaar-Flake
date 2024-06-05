@@ -13,7 +13,7 @@ Import
     solaar = {
       url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz" # For latest stable version
       #url = "https://flakehub.com/f/Svenum/Solaar-Flake/1.1.13.tar.gz" # uncomment line for version 1.1.13
-      #url = "github:Svenum/Solaar-Flake/main; # Uncomment line for latest unstable version
+      #url = "github:Svenum/Solaar-Flake/main"; # Uncomment line for latest unstable version
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
