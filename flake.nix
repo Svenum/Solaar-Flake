@@ -22,5 +22,10 @@
         src = ./.;
       };
     in
-    lib.mkFlake {};
+    lib.mkFlake {
+      alias = {
+        packages.default = "solaar";
+        modules.nixos.default = "solaar";
+      };
+    };
 }
