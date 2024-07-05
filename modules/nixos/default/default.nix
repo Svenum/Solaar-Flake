@@ -4,7 +4,6 @@ with lib;
 
 let
   cfg = config.programs.solaar;
-  solaar-flake = pkgs.callPackage ./package.nix {};
 in
 {
   options.programs.solaar = {
@@ -26,6 +25,6 @@ in
   config = mkIf cfg.enable {
     hardware.logitech.wireless.enable = true;
     hardware.logitech.wireless.enableGraphical = mkForce false;
-    environment.systemPackages = [ cfg.package ];
+    environment.systemPackages = [ pkgs.internal.default ];
   };
 }
