@@ -25,6 +25,6 @@ in
   config = mkIf cfg.enable {
     hardware.logitech.wireless.enable = true;
     hardware.logitech.wireless.enableGraphical = mkForce false;
-    environment.systemPackages = [ pkgs.internal.default ];
+    environment.systemPackages = [ pkgs.internal.solaar ];
   };
 }
