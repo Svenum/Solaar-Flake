@@ -13,8 +13,8 @@ in
 
     package = mkOption {
       type = types.package;
-      default = solaar-flake;
-      defaultText = "pkgs.solaar-flake";
+      default = pkgs.internal.solaar;
+      defaultText = "pkgs.internal.solaar";
       description = ''
         Package witch is used for Solaar
       '';
