@@ -2,7 +2,7 @@
 
 with lib;
 
-let cfg = config.programs.solaar;
+let cfg = config.services.solaar;
 in {
   options.services.solaar = {
     enable = mkEnableOption ''
