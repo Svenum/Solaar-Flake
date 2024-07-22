@@ -51,7 +51,7 @@ in {
 
     systemd.user.services.solaar = {
       description = "Solaar, the open source driver for Logitech devices";
-      wantedBy = [ "multi-user.target" ];
+      wantedBy = [ "graphical-session.target" ];
       after = [ "dbus.service" ];
       serviceConfig = {
         Type = "simple";
