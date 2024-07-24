@@ -62,4 +62,8 @@ in {
       };
     };
   };
+
+	imports = [
+		(lib.mkRenamedOptionModule [ "programs" "solaar" "enable" ] [ "services" "solaar" "enable" ])
+	];
 }
