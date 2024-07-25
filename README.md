@@ -16,7 +16,7 @@ Import
     solaar = {
       url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz" # For latest stable version
       #url = "https://flakehub.com/f/Svenum/Solaar-Flake/1.1.13.tar.gz" # uncomment line for version 1.1.13
-      #url = "github:Svenum/Solaar-Flake/main; # Uncomment line for latest unstable version
+      #url = "github:Svenum/Solaar-Flake/main"; # Uncomment line for latest unstable version
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -25,7 +25,7 @@ Import
       system = "x86_64-linux";
       modules = [
           solaar.nixosModules.default
-          configuration.nix
+        ./configuration.nix
       ];
     };
   }
@@ -34,7 +34,23 @@ Import
 Then enable it by putting:
 ```nix
 ...
-    programs.solaar.enable = true;
+    services.solaar.enable = true;
 ...
 ```
 in configuration.nix
+
+## Configuration
+
+The configuration is done in the `configuration.nix` file. The following options are available:
+
+```nix
+{
+  services.solaar = {
+    enable = true; # Enable the service
+    package = pkgs.solaar; # The package to use
+    window = "hide"; # Show the window on startup (show, *hide*, only [window only])
+    batteryIcons = "regular"; # Which battery icons to use (*regular*, symbolic, solaar)
+    extraArgs = ""; # Extra arguments to pass to solaar on startup
+  };
+}
+```
