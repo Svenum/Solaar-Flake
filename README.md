@@ -6,6 +6,12 @@ This Repo is a Flake of [Solaar](https://github.com/pwr-Solaar/Solaar) for NixOS
 
 See also the [FlakeHub](https://flakehub.com/flake/Svenum/Solaar-Flake) release.
 
+# Version Mapping
+
+|Flake version|Solaar version|
+|-|-|
+|[0.1.1](https://github.com/Svenum/Solaar-Flake/releases/tag/0.1.1)|[1.1.13](https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.13)|
+
 # How to use?
 
 Import
@@ -15,7 +21,7 @@ Import
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     solaar = {
       url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz" # For latest stable version
-      #url = "https://flakehub.com/f/Svenum/Solaar-Flake/1.1.13.tar.gz" # uncomment line for version 1.1.13
+      #url = "https://flakehub.com/f/Svenum/Solaar-Flake/0.1.1.tar.gz" # uncomment line for solaar version 1.1.13
       #url = "github:Svenum/Solaar-Flake/main"; # Uncomment line for latest unstable version
       inputs.nixpkgs.follows = "nixpkgs";
     };
