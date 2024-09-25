@@ -1,5 +1,5 @@
 {
-  description = "Solaar is Open Source Logitech Driver for Linux";
+  description = "Solaar is an Open Source Logitech Driver for Linux";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
