@@ -2,7 +2,7 @@
   description = "Solaar is Open Source Logitech Driver for Linux";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
 
     snowfall-lib = {
       url = "github:snowfallorg/lib?ref=v3.0.3";

@@ -17,14 +17,7 @@
 }:
 
 let
-  release = "1.1.13";
-  dbus-python = python3Packages.dbus-python.overrideAttrs (oldAttrs: {
-    src = fetchPypi {
-      pname = "dbus-python";
-      version = "1.3.2";
-      sha256 = "sha256-rWeBkwhhi1BpU3viN/jmjKHH/Mle5KEh/mhFsUGCSPg=";
-    };
-  });
+  release = "1.1.14rc4";
 in
 python3Packages.buildPythonApplication rec{
   pname = "solaar-flake";
@@ -32,7 +25,7 @@ python3Packages.buildPythonApplication rec{
 
   src = fetchurl {
     url = "https://github.com/pwr-Solaar/Solaar/archive/refs/tags/${release}.tar.gz"; 
-    hash = "sha256-VM//EkAZLpIAQAy+BtJCfx6kHHb3evr6LdP8XQM5Wtw=";
+    hash = "sha256-CEaA9d/vxtcWt/BFISXr3vetpVG//QMjpZAx5brij2I=";
   };
 
   outputs = [ "out" "udev" ];
@@ -57,6 +50,7 @@ python3Packages.buildPythonApplication rec{
     pyyaml
     xlib
     dbus-python
+    typing-extensions
   ];
 
   # the -cli symlink is just to maintain compabilility with older versions where
