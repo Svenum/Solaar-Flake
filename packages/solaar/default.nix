@@ -17,7 +17,7 @@
 }:
 
 let
-  release = "1.1.14rc4";
+  release = "1.1.14";
 in
 python3Packages.buildPythonApplication rec{
   pname = "solaar-flake";
@@ -25,7 +25,7 @@ python3Packages.buildPythonApplication rec{
 
   src = fetchurl {
     url = "https://github.com/pwr-Solaar/Solaar/archive/refs/tags/${release}.tar.gz"; 
-    hash = "sha256-CEaA9d/vxtcWt/BFISXr3vetpVG//QMjpZAx5brij2I=";
+    hash = "sha256-jTdqT+ABB2pB09C7X3rweXQtr0jDeTB4Wg7Ox9qPvR8=";
   };
 
   outputs = [ "out" "udev" ];
