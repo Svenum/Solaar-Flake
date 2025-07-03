@@ -61,6 +61,8 @@ python3Packages.buildPythonApplication rec{
     install -Dm444 -t $udev/etc/udev/rules.d rules.d-uinput/*.rules
   '';
 
+  pyproject = true;
+  build-system = with python3Packages; [ setuptools ];
   dontWrapGApps = true;
 
   preFixup = ''
