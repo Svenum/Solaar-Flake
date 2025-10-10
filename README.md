@@ -13,6 +13,7 @@ See also the [FlakeHub](https://flakehub.com/flake/Svenum/Solaar-Flake) release.
 |[0.1.1](https://github.com/Svenum/Solaar-Flake/releases/tag/0.1.1)|[1.1.13](https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.13)|
 |[0.1.2-rc.1](https://github.com/Svenum/Solaar-Flake/releases/tag/0.1.2-rc.1)|[1.1.14rc4](https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.14rc4)|
 |[0.1.2](https://github.com/Svenum/Solaar-Flake/releases/tag/0.1.2)|[1.1.14](https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.14)|
+|[0.1.3-rc.1](https://github.com/Svenum/Solaar-Flake/releases/tag/0.1.3-rc.1)|[1.1.15rc2](https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.15rc2)|
 
 # How to use?
 
