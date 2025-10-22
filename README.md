@@ -10,10 +10,11 @@ See also the [FlakeHub](https://flakehub.com/flake/Svenum/Solaar-Flake) release.
 
 |Flake version|Solaar version|
 |-|-|
-|[0.1.1](https://github.com/Svenum/Solaar-Flake/releases/tag/0.1.1)|[1.1.13](https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.13)|
-|[0.1.2-rc.1](https://github.com/Svenum/Solaar-Flake/releases/tag/0.1.2-rc.1)|[1.1.14rc4](https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.14rc4)|
-|[0.1.2](https://github.com/Svenum/Solaar-Flake/releases/tag/0.1.2)|[1.1.14](https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.14)|
+|[0.1.3](https://github.com/Svenum/Solaar-Flake/releases/tag/0.1.3)|[1.1.15](https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.15)|
 |[0.1.3-rc.1](https://github.com/Svenum/Solaar-Flake/releases/tag/0.1.3-rc.1)|[1.1.15rc2](https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.15rc2)|
+|[0.1.2](https://github.com/Svenum/Solaar-Flake/releases/tag/0.1.2)|[1.1.14](https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.14)|
+|[0.1.2-rc.1](https://github.com/Svenum/Solaar-Flake/releases/tag/0.1.2-rc.1)|[1.1.14rc4](https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.14rc4)|
+|[0.1.1](https://github.com/Svenum/Solaar-Flake/releases/tag/0.1.1)|[1.1.13](https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.13)|
 
 # How to use?
 
@@ -24,7 +25,7 @@ Import
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     solaar = {
       url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
-      #url = "https://flakehub.com/f/Svenum/Solaar-Flake/0.1.1.tar.gz"; # uncomment line for solaar version 1.1.13
+      #url = "https://flakehub.com/f/Svenum/Solaar-Flake/0.1.2.tar.gz"; # uncomment line for solaar version 1.1.14
       #url = "github:Svenum/Solaar-Flake/main"; # Uncomment line for latest unstable version
       inputs.nixpkgs.follows = "nixpkgs";
     };
