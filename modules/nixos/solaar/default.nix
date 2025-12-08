@@ -1,8 +1,10 @@
-{ config, lib, pkgs, self, ... }:
+{ config, lib, pkgs, ... }:
 
 with lib;
 
-let cfg = config.services.solaar;
+let
+  cfg = config.services.solaar;
+  solaar = pkgs.callPackage ../../../packages/solaar;
 in {
   options.services.solaar = {
     enable = mkEnableOption ''
@@ -11,8 +13,8 @@ in {
 
     package = mkOption {
       type = types.package;
-      default = self.pkgs.solaar;
-      defaultText = "self.pkgs.solaar";
+      default = solaar;
+      defaultText = "solaar";
       description = ''
         Package witch is used for Solaar
       '';
