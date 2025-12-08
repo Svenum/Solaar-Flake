@@ -30,6 +30,5 @@
     };
 
     overlay = import ./packages;
-
   };
 }
