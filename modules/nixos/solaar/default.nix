@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, self, ... }:
 
 with lib;
 
@@ -11,8 +11,8 @@ in {
 
     package = mkOption {
       type = types.package;
-      default = pkgs.internal.solaar;
-      defaultText = "pkgs.internal.solaar";
+      default = self.pkgs.solaar;
+      defaultText = "self.pkgs.solaar";
       description = ''
         Package witch is used for Solaar
       '';

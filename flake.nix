@@ -14,7 +14,7 @@
     inherit self inputs;
 
     sharedOverlays = [
-      self.overlay
+      (import ./packages)
     ];
 
     nixosModules = exportModules [
@@ -29,7 +29,5 @@
     outputsBuilder = channels: {
       packages = exportPackages self.overlays channels;
     };
-
-    overlay = import ./packages;
   };
 }
