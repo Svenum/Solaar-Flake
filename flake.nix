@@ -19,6 +19,7 @@
 
     nixosModules = exportModules [
       ./modules/nixos/solaar
+      ./modules/nixos/solaar/default.nix
     ];
 
     overlays = exportOverlays {
