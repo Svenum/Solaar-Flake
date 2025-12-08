@@ -4,7 +4,7 @@ with lib;
 
 let
   cfg = config.services.solaar;
-  solaar = pkgs.callPackage ../../../packages/solaar;
+  solaar = pkgs.callPackage ../../../packages/solaar { };
 in {
   options.services.solaar = {
     enable = mkEnableOption ''
