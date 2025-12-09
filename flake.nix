@@ -3,29 +3,31 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-
-    snowfall-lib = {
-      url = "github:snowfallorg/lib?ref=v3.0.3";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    flake-compat = {
-      url = "github:edolstra/flake-compat";
-      flake = false;
-    };
+    utils.url = "github:gytis-ivaskevicius/flake-utils-plus?rev=afcb15b845e74ac5e998358709b2b5fe42a948d1";
   };
 
-  outputs = inputs:
-    let
-      lib = inputs.snowfall-lib.mkLib {
-        inherit inputs;
-        src = ./.;
-      };
-    in
-    lib.mkFlake {
-      alias = {
-        packages.default = "solaar";
-        modules.nixos.default = "solaar";
-      };
+  outputs = inputs@{ self, nixpkgs, utils, ... }:
+  let
+    inherit (utils.lib) exportOverlays exportPackages exportModules;
+  in
+  utils.lib.mkFlake {
+    inherit self inputs;
+
+    sharedOverlays = [
+      (import ./packages)
+    ];
+
+    nixosModules = exportModules [
+      ./modules/nixos/solaar
+      ./modules/nixos/solaar/default.nix
+    ];
+
+    overlays = exportOverlays {
+      inherit (self) pkgs inputs;
     };
+
+    outputsBuilder = channels: {
+      packages = exportPackages self.overlays channels;
+    };
+  };
 }
