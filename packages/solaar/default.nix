@@ -1,12 +1,7 @@
 { stdenv
 , lib
 , fetchurl
-, fetchPypi
 , python3Packages
-, python3
-, dbus
-, dbus-glib
-, pkg-config
 
 , gobject-introspection
 , gtk3
@@ -16,16 +11,13 @@
 , librsvg
 }:
 
-let
-  release = "1.1.17rc3";
-in
 python3Packages.buildPythonApplication rec{
   pname = "solaar-flake";
-  version = release;
+  version = "1.1.17";
 
   src = fetchurl {
-    url = "https://github.com/pwr-Solaar/Solaar/archive/refs/tags/${release}.tar.gz"; 
-    hash = "sha256-B1/ncq9qZQD4+gNYoinJEojzS7k4tL4UCONvoajEhAY=";
+    url = "https://github.com/pwr-Solaar/Solaar/archive/refs/tags/${version}.tar.gz"; 
+    hash = "sha256-aHm6cLZMgeu5xsCH3iEICWodkk10UrxFbqhVzhl8oVI=";
   };
 
   outputs = [ "out" "udev" ];
@@ -79,7 +71,7 @@ python3Packages.buildPythonApplication rec{
     homepage = "https://github.com/pwr-Solaar/Solaar";
     description = "Linux device manager for Logitech devices";
     platforms = with platforms; linux;
-    changelog = "https://github.com/pwr-Solaar/Solaar/releases/tag/${release}";
+    changelog = "https://github.com/pwr-Solaar/Solaar/releases/tag/${version}";
     license = licenses.gpl2Only;
     maintainers = with maintainers; [ "Svenum" ];
   };
