@@ -13,11 +13,11 @@
 
 python3Packages.buildPythonApplication rec{
   pname = "solaar-flake";
-  version = "1.1.17";
+  version = "1.1.18";
 
   src = fetchurl {
     url = "https://github.com/pwr-Solaar/Solaar/archive/refs/tags/${version}.tar.gz"; 
-    hash = "sha256-aHm6cLZMgeu5xsCH3iEICWodkk10UrxFbqhVzhl8oVI=";
+    hash = "sha256-0Ut2o2LyoeU9nSnAUxLsO9ULpoUigL0gAZopQRtNRmk=";
   };
 
   outputs = [ "out" "udev" ];
