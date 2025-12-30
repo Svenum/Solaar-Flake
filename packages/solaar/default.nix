@@ -9,15 +9,16 @@
 , gdk-pixbuf
 , libappindicator
 , librsvg
+, libnotify
 }:
 
 python3Packages.buildPythonApplication rec{
   pname = "solaar-flake";
-  version = "1.1.18";
+  version = "1.1.19rc1";
 
   src = fetchurl {
     url = "https://github.com/pwr-Solaar/Solaar/archive/refs/tags/${version}.tar.gz"; 
-    hash = "sha256-0Ut2o2LyoeU9nSnAUxLsO9ULpoUigL0gAZopQRtNRmk=";
+    hash = "sha256-Ucx6d+OwrZ/iy7tKUKTEJzY7tDTjBu83ydjGqJolYSE=";
   };
 
   outputs = [ "out" "udev" ];
@@ -31,6 +32,7 @@ python3Packages.buildPythonApplication rec{
   buildInputs = [
     libappindicator
     librsvg
+    libnotify
   ];
 
   propagatedBuildInputs = with python3Packages; [
