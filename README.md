@@ -9,6 +9,7 @@ See also the [FlakeHub](https://flakehub.com/flake/Svenum/Solaar-Flake) release.
 
 |Flake version|Solaar version|
 |-|-|
+|[0.1.7](https://github.com/Svenum/Solaar-Flake/releases/tag/0.1.7)|[1.1.19](https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.19)|
 |[0.1.7-rc.1](https://github.com/Svenum/Solaar-Flake/releases/tag/0.1.7-rc.1)|[1.1.19rc1](https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.19rc1)|
 |[0.1.6](https://github.com/Svenum/Solaar-Flake/releases/tag/0.1.6)|[1.1.18](https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.18)|
 |[0.1.5](https://github.com/Svenum/Solaar-Flake/releases/tag/0.1.5)|[1.1.17](https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.17)|
@@ -29,7 +30,7 @@ Import
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     solaar = {
       url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
-      #url = "https://flakehub.com/f/Svenum/Solaar-Flake/0.1.6.tar.gz"; # uncomment line for solaar version 1.1.18
+      #url = "https://flakehub.com/f/Svenum/Solaar-Flake/0.1.7.tar.gz"; # uncomment line for solaar version 1.1.19
       #url = "github:Svenum/Solaar-Flake/main"; # Uncomment line for latest unstable version
       inputs.nixpkgs.follows = "nixpkgs";
     };
