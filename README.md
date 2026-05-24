@@ -9,6 +9,7 @@ See also the [FlakeHub](https://flakehub.com/flake/Svenum/Solaar-Flake) release.
 
 |Flake version|Solaar version|
 |-|-|
+|[0.1.8-rc.1](https://github.com/Svenum/Solaar-Flake/releases/tag/0.1.8-rc.1)|[1.1.20rc2](https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.20rc2)|
 |[0.1.7](https://github.com/Svenum/Solaar-Flake/releases/tag/0.1.7)|[1.1.19](https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.19)|
 |[0.1.7-rc.1](https://github.com/Svenum/Solaar-Flake/releases/tag/0.1.7-rc.1)|[1.1.19rc1](https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.19rc1)|
 |[0.1.6](https://github.com/Svenum/Solaar-Flake/releases/tag/0.1.6)|[1.1.18](https://github.com/pwr-Solaar/Solaar/releases/tag/1.1.18)|
