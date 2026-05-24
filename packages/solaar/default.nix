@@ -1,27 +1,31 @@
-{ stdenv
-, lib
-, fetchurl
-, python3Packages
+{
 
-, gobject-introspection
-, gtk3
-, wrapGAppsHook3
-, gdk-pixbuf
-, libappindicator
-, librsvg
-, libnotify
+  lib,
+  fetchurl,
+  python3Packages,
+
+  gobject-introspection,
+  gtk3,
+  wrapGAppsHook3,
+  gdk-pixbuf,
+  libappindicator,
+  librsvg,
+  libnotify,
 }:
 
-python3Packages.buildPythonApplication rec{
+python3Packages.buildPythonApplication rec {
   pname = "solaar-flake";
-  version = "1.1.19";
+  version = "1.1.20rc2";
 
   src = fetchurl {
-    url = "https://github.com/pwr-Solaar/Solaar/archive/refs/tags/${version}.tar.gz"; 
-    hash = "sha256-k5KnW/6frxTx6eXBopv++dXYVSUpyHC90CaRX5ZSMPI=";
+    url = "https://github.com/pwr-Solaar/Solaar/archive/refs/tags/${version}.tar.gz";
+    hash = "sha256-zGDBWECho0/XcYzOc8Cr+ApPHm4l7mh7oRhW9L9yzSM=";
   };
 
-  outputs = [ "out" "udev" ];
+  outputs = [
+    "out"
+    "udev"
+  ];
 
   nativeBuildInputs = [
     gdk-pixbuf
