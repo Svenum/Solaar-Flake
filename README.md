@@ -28,12 +28,11 @@ Import
 ```nix
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     solaar = {
       url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
       #url = "https://flakehub.com/f/Svenum/Solaar-Flake/0.1.7.tar.gz"; # uncomment line for solaar version 1.1.19
       #url = "github:Svenum/Solaar-Flake/main"; # Uncomment line for latest unstable version
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   outputs = {nixpkgs, solaar}: {
@@ -63,7 +62,7 @@ The configuration is done in the `configuration.nix` file. The following options
 {
   services.solaar = {
     enable = true; # Enable the service
-    package = pkgs.solaar; # The package to use
+    #package = pkgs.solaar; # Only set this option if you want to override the package from this flake!
     window = "hide"; # Show the window on startup (show, *hide*, only [window only])
     batteryIcons = "regular"; # Which battery icons to use (*regular*, symbolic, solaar)
     extraArgs = ""; # Extra arguments to pass to solaar on startup
