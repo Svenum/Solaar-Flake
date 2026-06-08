@@ -37,7 +37,6 @@ Import
   };
   outputs = {nixpkgs, solaar}: {
     nixosConfigurations.foo = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
       modules = [
           solaar.nixosModules.default
         ./configuration.nix
