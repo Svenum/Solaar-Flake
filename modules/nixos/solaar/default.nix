@@ -1,11 +1,17 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 with lib;
 
 let
   cfg = config.services.solaar;
   solaar = pkgs.callPackage ../../../packages/solaar { };
-in {
+in
+{
   options.services.solaar = {
     enable = mkEnableOption ''
       Solaar, the open source driver for Logitech devices.
@@ -21,7 +27,11 @@ in {
     };
 
     window = mkOption {
-      type = types.enum [ "show" "hide" "only" ];
+      type = types.enum [
+        "show"
+        "hide"
+        "only"
+      ];
       default = "hide";
       description = ''
         Start with window showing / hidden / only (no tray icon)
@@ -29,7 +39,11 @@ in {
     };
 
     batteryIcons = mkOption {
-      type = types.enum [ "regular" "symbolic" "solaar" ];
+      type = types.enum [
+        "regular"
+        "symbolic"
+        "solaar"
+      ];
       default = "regular";
       description = ''
         Prefer regular battery / symbolic battery / solaar icons
@@ -47,6 +61,13 @@ in {
   };
 
   config = mkIf cfg.enable {
+    warnings = [
+      ''
+        The Solaar-Flake will be discontinued with the release of NixOS 26.11.
+        If you are on unsntable you can switch to the new `programs.solaar` module, which is
+        already part of the official nixpkgs repository.
+      ''
+    ];
     hardware.logitech.wireless.enable = true;
     hardware.logitech.wireless.enableGraphical = mkForce false;
     environment.systemPackages = [ cfg.package ];
@@ -57,15 +78,14 @@ in {
       after = [ "dbus.service" ];
       serviceConfig = {
         Type = "simple";
-        ExecStart =
-          "${cfg.package}/bin/solaar --window ${cfg.window} --battery-icons ${cfg.batteryIcons} ${cfg.extraArgs}";
+        ExecStart = "${cfg.package}/bin/solaar --window ${cfg.window} --battery-icons ${cfg.batteryIcons} ${cfg.extraArgs}";
         Restart = "on-failure";
         RestartSec = "5";
       };
     };
   };
 
-	imports = [
-		(lib.mkRenamedOptionModule [ "programs" "solaar" "enable" ] [ "services" "solaar" "enable" ])
-	];
+  imports = [
+    (lib.mkRenamedOptionModule [ "programs" "solaar" "enable" ] [ "services" "solaar" "enable" ])
+  ];
 }
